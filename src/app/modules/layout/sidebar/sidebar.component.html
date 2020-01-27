@@ -32,6 +32,23 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+                            <li *ngFor="let menu of sidebarService.menu" class="nav-item has-treeview">
+                                <a href="{{menu.url}}" class="nav-link">
+                                    <i class="nav-icon fas {{menu.icon}}"></i>
+                                    <p>
+                                        {{menu.titulo}}
+                                        <i *ngIf="menu.submenu.length>0" class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul *ngIf="menu.submenu.length>0" class="nav nav-treeview">
+                                    <li *ngFor="let submenu of menu.submenu" class="nav-item">
+                                        <a href="{{submenu.url}}" class="nav-link">
+                                            <i class="far {{submenu.icon}} nav-icon"></i>
+                                            <p>{{submenu.titulo}}</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="nav-item has-treeview menu-open">
                                 <a href="#" class="nav-link active">
                                     <i class="nav-icon fas fa-tachometer-alt"></i>
