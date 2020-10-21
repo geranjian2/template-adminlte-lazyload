@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+// declare function menu_init();
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
 
   title = 'crm';
   ngOnInit(){
-   
+    // menu_init();
   }
 
 }
