@@ -4,28 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SidebarService {
-  menu: Menu[] = [{
-    titulo: 'DashBoard',
-    icon: 'fa-tachometer-alt',
-    url: '#',
-    submenu: [{
-      titulo: 'Dashboard 1',
-      icon: 'fa-circle',
-      url: '/dashboard1'
-    }, {
-      titulo: 'Dashboard 2',
-      icon: 'fa-circle',
-      url: '/dashboard2'
-    }, {
-      titulo: 'Dashboard 3',
-      icon: 'fa-circle',
-      url: '/dashboard3'
-    },]
-  },
-  {
-    titulo: 'Widgets',
+  menu: Menu[] = [
+    {
+      titulo: 'Ciudades',
+      icon: 'fa-th',
+      url: '/sedes',
+      submenu: []
+    },
+    {
+    titulo: 'Sedes',
     icon: 'fa-th',
-    url: '/widgets',
+    url: '/sedes',
     submenu: []
   }
   ];
