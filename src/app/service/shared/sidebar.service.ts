@@ -8,7 +8,7 @@ export class SidebarService {
     {
       titulo: 'Ciudades',
       icon: 'fa-th',
-      url: '/sedes',
+      url: '/ciudades',
       submenu: []
     },
     {

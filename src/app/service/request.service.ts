@@ -14,7 +14,7 @@ export class RequestService {
 
   globalRequestApi(method, json, url, typeService) {
     let request: Observable<any>;
-    const token = localStorage.getItem('tokenCrmApi');
+    const token = localStorage.getItem('auth');
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',

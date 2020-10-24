@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   myFormLogin: FormGroup;
   constructor(
-    private auth:AuthenticationService,
+    private auth: AuthenticationService,
     private fb: FormBuilder,
     private router: Router,
   ) { }
@@ -28,52 +28,42 @@ export class LoginComponent implements OnInit {
   submitForm() {
 
     if (this.myFormLogin.valid) {
-        console.log(this.myFormLogin.getRawValue());
+      console.log(this.myFormLogin.getRawValue());
 
-        try{
-          this.auth.login(this.myFormLogin.getRawValue()).subscribe((data:any)=>{
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('currentUser', JSON.stringify(data.user));
-            const user: User = data.user;
-            console.log(user);
-            this.auth.setCurrentUserValue(user);
-            this.router.navigate(['/']);
-          },error=>{
-            Swal.fire(
-
-              'Error',
-
-              'Usuario o clave incorrectos',
-
-              'error'
-
-            )
-          });
-        }catch( e) {
-
+      try {
+        this.auth.login(this.myFormLogin.getRawValue()).subscribe((data: any) => {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('currentUser', JSON.stringify(data.user));
+          const user: User = data.user;
+          console.log(user);
+          this.auth.setCurrentUserValue(user);
+          this.router.navigate(['/']);
+        }, error => {
           Swal.fire(
-
-
             'Error',
-
             'Usuario o clave incorrectos',
-
             'error'
 
           )
-        }
+        });
+      } catch (e) {
 
-    } else {
-        console.log('There is a problem with the form');
         Swal.fire(
-
-          'Información',
-
-          'Usuario y clave requeridos',
-
-          'info'
+          'Error',
+          'Usuario o clave incorrectos',
+          'error'
 
         )
+      }
+
+    } else {
+      console.log('There is a problem with the form');
+      Swal.fire(
+        'Información',
+        'Usuario y clave requeridos',
+        'info'
+        )
+
     }
   }
 
