@@ -9,17 +9,17 @@ const routes: Routes = [
     path: '', component: LayoutComponent,
       children: [
         {
-          path: '', 
-          loadChildren: '../inmuebles/inmuebles.module#InmueblesModule',
+          path: '',
+          loadChildren: '../dasboard/dasboard.module#DasboardModule',
           canActivate: [AuthGuard],
         },
         {
-          path: 'ciudades', 
+          path: 'ciudades',
           loadChildren: '../ciudades/ciudades.module#CiudadesModule',
           canActivate: [AuthGuard],
         },
         {
-          path: 'sedes', 
+          path: 'sedes',
           loadChildren: '../sedes/sedes.module#SedesModule',
           canActivate: [AuthGuard],
         }

@@ -15,12 +15,7 @@ export class SaveComponent implements OnInit {
 
   ciudades : Ciudad;
   myFormCampus: FormGroup;
-  cars = [
-    { id: 1, name: 'Volvo' },
-    { id: 2, name: 'Saab' },
-    { id: 3, name: 'Opel' },
-    { id: 4, name: 'Audi' },
-];
+
   constructor(private fb: FormBuilder , private ciudadService: CiudadService , private sedeService: SedeService) { }
 
   ngOnInit() {

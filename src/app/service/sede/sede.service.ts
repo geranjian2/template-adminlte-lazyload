@@ -40,5 +40,25 @@ export class SedeService {
   }
 
 
+  listarSedeCiudad(dato) {
+
+    let request: Observable<any>;
+
+
+    request = this.service.globalRequestApi('get' , null , `campus/city/${dato}`);
+
+
+    return request;
+
+  }
+
+  listarSedeUser (dato) {
+    let request: Observable<any>;
+    request = this.service.globalRequestApi('get' , null , `users/getuser/userall/${dato}`);
+    return request;
+
+  }
+
+
 
 }

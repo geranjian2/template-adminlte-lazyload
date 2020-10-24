@@ -14,7 +14,7 @@ export class AuthenticationService {
   public currentUser: Observable<User>;
   constructor(
     private http: HttpClient,
-  ) { 
+  ) {
 
     this.currentUserSubject = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem('currentUser'))
@@ -42,6 +42,28 @@ export class AuthenticationService {
     const loginParams = credentials;
     return this.http.post(
       `${environment.url}/auth/login`,
+      loginParams,
+      this.options
+    );
+  }
+
+
+  registerUser(data) {
+
+    this.headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    this.options = { headers: this.headers };
+    const loginParams =  {
+      username : data.username,
+      password : data.password,
+      cedula : data.cedula,
+      sedesave : data.sedesave,
+      apellido : data.apellido,
+      email: data.email
+    }
+    return this.http.post(
+      `${environment.url}/users`,
       loginParams,
       this.options
     );

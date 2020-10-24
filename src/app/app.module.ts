@@ -8,8 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
+import { NgSelect2Module } from 'ng-select2';
+
 import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,12 @@ import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios
   ],
   imports: [
     BrowserModule,
+    NgSelectModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-
+    NgSelect2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
