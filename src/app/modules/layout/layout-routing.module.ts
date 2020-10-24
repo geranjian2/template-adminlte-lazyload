@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 import { LayoutComponent } from './layout.component';
 
 
@@ -9,15 +10,18 @@ const routes: Routes = [
       children: [
         {
           path: '', 
-          loadChildren: '../inmuebles/inmuebles.module#InmueblesModule'
+          loadChildren: '../inmuebles/inmuebles.module#InmueblesModule',
+          canActivate: [AuthGuard],
         },
         {
           path: 'ciudades', 
-          loadChildren: '../ciudades/ciudades.module#CiudadesModule'
+          loadChildren: '../ciudades/ciudades.module#CiudadesModule',
+          canActivate: [AuthGuard],
         },
         {
           path: 'sedes', 
-          loadChildren: '../sedes/sedes.module#SedesModule'
+          loadChildren: '../sedes/sedes.module#SedesModule',
+          canActivate: [AuthGuard],
         }
       ]
   },

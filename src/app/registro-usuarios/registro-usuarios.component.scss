@@ -1,0 +1,17 @@
+.register-page {
+    background-image: url('/assets/img/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    .login-box {
+        .card {
+            background-color: rgba(50, 0, 0, 0.4)!important;
+            .card-body {
+                color: white;
+                background: none;
+                span {
+                    color: white!important;
+                }
+            }
+        }
+    }
+}

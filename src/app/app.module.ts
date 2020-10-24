@@ -6,13 +6,16 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { LoginComponent } from './login/login.component';
-import { NgSelect2Module } from 'ng-select2';
+import { RegistroUsuariosComponent } from './registro-usuarios/registro-usuarios.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    RegistroUsuariosComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { NgSelect2Module } from 'ng-select2';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgSelect2Module
+
   ],
   providers: [],
   bootstrap: [AppComponent]
