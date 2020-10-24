@@ -68,4 +68,9 @@ export class AuthenticationService {
       this.options
     );
   }
+  logout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
+    this.currentUserSubject.next(null);
+  }
 }

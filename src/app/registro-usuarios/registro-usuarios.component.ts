@@ -70,10 +70,6 @@ export class RegistroUsuariosComponent implements OnInit {
   }
 
   listarCuidades() {
-
-
-
-
     this.ciudadService.listar().subscribe((res) => {
 
       console.log("res" + res);
@@ -94,12 +90,7 @@ export class RegistroUsuariosComponent implements OnInit {
   peticion(data) {
 
    this.sedeService.listarSedeCiudad(data).subscribe( (res) => {
-
-
-
-    console.log(res);
     this.ciudadSedes = res;
-
     this.ciudadSedes = this.ciudadSedes[0].sede;
 
    }, error => {
