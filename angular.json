@@ -33,7 +33,8 @@
                             "src/assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css",
                             "src/assets/css/adminlte.min.css",
                             "src/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
-                            "src/styles.scss"
+                            "src/styles.scss",
+                            "node_modules/sweetalert2/src/sweetalert2.scss"
                         ],
                         "scripts": [
                             "src/assets/plugins/jquery/jquery.min.js",
