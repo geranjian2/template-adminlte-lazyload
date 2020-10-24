@@ -14,7 +14,25 @@ export class AuthenticationService {
   public currentUser: Observable<User>;
   constructor(
     private http: HttpClient,
-  ) { }
+  ) { 
+
+    this.currentUserSubject = new BehaviorSubject<User>(
+      JSON.parse(localStorage.getItem('currentUser'))
+    );
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
+
+
+  public get currentUserValue(): User {
+    return this.currentUserSubject.value;
+  }
+
+
+  public setCurrentUserValue(user: User) {
+    console.log(user);
+    this.currentUserSubject.next(user);
+  }
+
   login(credentials) {
     console.log("ingreso",credentials);
     this.headers = new HttpHeaders({

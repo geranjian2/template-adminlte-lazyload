@@ -10,6 +10,10 @@ const routes: Routes = [
         {
           path: '', 
           loadChildren: '../inmuebles/inmuebles.module#InmueblesModule'
+        },
+        {
+          path: 'ciudades', 
+          loadChildren: '../ciudades/ciudades.module#CiudadesModule'
         }
       ]
   },
