@@ -28,18 +28,23 @@ export class SaveComponent implements OnInit {
 
     this.ciudad.saveCiudad(this.myFormCity.getRawValue()).subscribe((res) => {
 
-      console.log("respuesta " + res);
+
+      if(res.message == "ok"){
+
+        Swal.fire(
+          'Guardo',
+          'Guardo cuidad correctamente',
+          'success'
+        );
+        this.myFormCity.reset();
+      }
 
     }, error => {
       Swal.fire(
-
         'Error',
-
         'Error al crear un ciudad',
-
         'error'
-
-      )
+      );
     }
     );
 

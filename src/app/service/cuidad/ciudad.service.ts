@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { RequestService } from '../request.service';
 @Injectable({
@@ -16,17 +17,28 @@ export class CiudadService {
 
   saveCiudad(ciudad) {
 
+
+    let request: Observable<any>;
     console.log('ciudad nombre : ', ciudad.name);
 
 
+    const datosEnviar = {
+      name : ciudad.name
+    };
+    request = this.service.globalRequestApi('post', datosEnviar , 'city' );
 
-    return this.service.globalRequestApi('post', ciudad.name , 'city/save' );
+    return request ;
+  }
 
 
-    // return this.http.post(
-    //   `${environment.url}/city/save`,
-    //   loginParams,
-    //   this.options
-    // );
+
+  listar() {
+
+
+    let request: Observable<any>;
+
+    request = this.service.globalRequestApi('get', null , 'city' );
+
+    return request ;
   }
 }
