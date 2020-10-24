@@ -26,27 +26,36 @@ export class SaveComponent implements OnInit {
     console.log(this.myFormCity.getRawValue());
 
 
-    this.ciudad.saveCiudad(this.myFormCity.getRawValue()).subscribe((res) => {
+    if( this.myFormCity.valid) {
+      this.ciudad.saveCiudad(this.myFormCity.getRawValue()).subscribe((res) => {
 
 
-      if(res.message == "ok"){
+        if(res.message == "ok"){
 
+          Swal.fire(
+            'Guardo',
+            'Guardo cuidad correctamente',
+            'success'
+          );
+          this.myFormCity.reset();
+        }
+
+      }, error => {
         Swal.fire(
-          'Guardo',
-          'Guardo cuidad correctamente',
-          'success'
+          'Error',
+          'Error al crear un ciudad',
+          'error'
         );
-        this.myFormCity.reset();
-      }
-
-    }, error => {
+      });
+    } else {
       Swal.fire(
         'Error',
-        'Error al crear un ciudad',
-        'error'
+        'Todos los campos son obligatorios',
+        'info'
       );
     }
-    );
+
+
 
 
   }

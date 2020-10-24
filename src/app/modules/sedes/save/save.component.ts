@@ -33,25 +33,35 @@ export class SaveComponent implements OnInit {
 
     console.log(this.myFormCampus.value);
 
-    this.sedeService.listarGuardar(this.myFormCampus.value).subscribe( (res) => {
+    if(this.myFormCampus.valid) {
 
-      if(res.message == "ok"){
+      this.sedeService.listarGuardar(this.myFormCampus.value).subscribe( (res) => {
 
+        if(res.message == "ok"){
+
+          Swal.fire(
+            'Guardo',
+            'Guardo cuidad correctamente',
+            'success'
+          );
+          this.myFormCampus.reset();
+        }
+
+      }, error => {
         Swal.fire(
-          'Guardo',
-          'Guardo cuidad correctamente',
-          'success'
+          'Error',
+          'Error al guardar sede',
+          'error'
         );
-        this.myFormCampus.reset();
-      }
-
-    }, error => {
+      })
+    }else{
       Swal.fire(
         'Error',
-        'Error al guardar sede',
-        'error'
+        'todos los campos son obligatarios',
+        'info'
       );
-    })
+    }
+
   }
 
   listarCuidades() {
