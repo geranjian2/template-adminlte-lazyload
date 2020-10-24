@@ -27,9 +27,9 @@ export class ListComponent implements OnInit {
 
     this.ciudadService.listar().subscribe((res) => {
 
-      console.log("res" + res.data);
+      console.log("res" + res);
 
-      this.ciudades = res.data;
+      this.ciudades = res;
 
       console.log(  this.ciudades);
 

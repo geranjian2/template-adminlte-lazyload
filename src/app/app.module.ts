@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-
+import { NgSelect2Module } from 'ng-select2';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgSelect2Module
   ],
   providers: [],
   bootstrap: [AppComponent]

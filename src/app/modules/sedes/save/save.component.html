@@ -22,15 +22,19 @@
                         </div>
                         <div class="card-body">
                             <div class="col-6">
+                              <form [formGroup]="myFormCampus" (ngSubmit)="saveCampus()">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nombre Sede</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Coloca el nombre de la ciudad">
+                                    <input type="email" class="form-control" formControlName="name" id="exampleInputEmail1" placeholder="Coloca el nombre de la sede">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Ciudad</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Coloca el nombre de la ciudad">
+                                    <ng-select  formControlName="city">
+                                      <ng-option *ngFor="let item of ciudades" [value]="item.id">{{item.nombreCuidad}}</ng-option>
+                                   </ng-select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
+                                </form>
                             </div>
                         </div>
                     </div>

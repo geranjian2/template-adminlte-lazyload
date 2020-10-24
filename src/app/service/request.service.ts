@@ -22,8 +22,6 @@ export class RequestService {
     });
     this.options = { headers: this.headers };
     if (method.toLowerCase() === 'get') {
-
-      console.log("peticion get");
       request = this.http.get(`${environment.url}/${url}`, this.options);
     } else {
       request = this.http.post(`${environment.url}/${url}`, json, this.options);

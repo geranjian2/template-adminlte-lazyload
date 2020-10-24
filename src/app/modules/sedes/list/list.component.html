@@ -29,13 +29,19 @@
                                     <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
+                                            <th>nombre sede</th>
+                                            <th>nombre ciudad</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
+                                      <tr *ngFor="let item of sedes" >
+                                        <td> {{item.id}}</td>
+                                        <td> {{item.nombreSede}}</td>
 
+                                        <td> {{item.cuidad.nombreCuidad}}</td>
+
+                                    </tr>
                                     </tbody>
                                 </table>
                             </div>
