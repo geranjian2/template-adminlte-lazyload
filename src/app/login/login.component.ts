@@ -31,14 +31,14 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', data.token);
           localStorage.setItem('currentUser', JSON.stringify(data.user));
           const user: User = data.user;
-          console.log(user);
           this.auth.setCurrentUserValue(user);
           this.router.navigate(['/']);
         },error=>{
-          console.log("error de petición")
+          console.log('error de petición')
         });
     } else {
         console.log('There is a problem with the form');
+        console.log(this.myFormLogin.valid);
     }
   }
 

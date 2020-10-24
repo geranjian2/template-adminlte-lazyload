@@ -14,6 +14,10 @@ const routes: Routes = [
         {
           path: 'ciudades', 
           loadChildren: '../ciudades/ciudades.module#CiudadesModule'
+        },
+        {
+          path: 'sedes', 
+          loadChildren: '../sedes/sedes.module#SedesModule'
         }
       ]
   },

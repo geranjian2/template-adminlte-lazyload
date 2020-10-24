@@ -33,7 +33,7 @@
                             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                             <li *ngFor="let menu of sidebarService.menu" class="nav-item has-treeview">
-                                <a href="{{menu.url}}" class="nav-link">
+                                <a routerLink="{{menu.url}}" class="nav-link">
                                     <i class="nav-icon fas {{menu.icon}}"></i>
                                     <p>
                                         {{menu.titulo}}
