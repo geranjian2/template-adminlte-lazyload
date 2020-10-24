@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'console';
+
 import { CiudadService } from 'src/app/service/cuidad/ciudad.service';
 import Swal from 'sweetalert2';
 import { Ciudad } from '../../../models/ciudad';
@@ -27,7 +27,7 @@ export class ListComponent implements OnInit {
 
     this.ciudadService.listar().subscribe((res) => {
 
-      console.log("res" + res);
+      console.log("res" + res.data);
 
       this.ciudades = res.data;
 

@@ -39,6 +39,11 @@ export class CiudadService {
 
     request = this.service.globalRequestApi('get', null , 'city' );
 
+
+
+      console.log(request);
+
+
     return request ;
   }
 }
