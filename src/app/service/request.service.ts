@@ -12,13 +12,13 @@ export class RequestService {
     private http:HttpClient
   ) { }
 
-  globalRequestApi(method, json, url, typeService) {
+  globalRequestApi(method, json, url) {
     let request: Observable<any>;
-    const token = localStorage.getItem('auth');
+    const token = localStorage.getItem('token');
 
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'token': token
+      'auth': token
     });
     this.options = { headers: this.headers };
     if (method.toLowerCase() === 'get') {

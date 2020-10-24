@@ -20,7 +20,7 @@ export class CiudadService {
 
 
 
-    return this.service.globalRequestApi('post', ciudad.name , 'city/save' , null);
+    return this.service.globalRequestApi('post', ciudad.name , 'city/save' );
 
 
     // return this.http.post(
